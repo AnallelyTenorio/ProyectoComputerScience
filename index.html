@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="paginaInicio" class="inicio">
+        <h1>Tu Escuela</h1>
+        <button onclick="buttonDarAlta()">Dar de alta alumno</button><br>
+        <button onclick="buttonInscribir()">Inscribir a clase</button><br>
+        <button onclick="buttonAsignar()">Asignar calificación</button><br>
+        <button onclick="buttonGrupos()">Grupos</button>
+    </div>
+    <div id="altaAlumno" class="hidden">
+        <h2>Alta de alumno</h2>
+        <label for="Nombre">Nombre:</label><br>
+        <input id="inputName" type="text"><br>
+        <label for="Apellidos">Apellidos:</label><br>
+        <input id="inputLastName" type="text"><br>
+        <label for="Edad">Edad:</label><br>
+        <input id="inputAge" type="number"><br>
+        <button onclick="buttonInicioAlta()">Atras</button>
+        <button onclick="altaAlumno()">Guardar</button>
+    </div>
+    <div id="inscribirAclase" class="hidden">
+        <h2>Inscribir alumno a clase</h2>
+        <label for="nombreAlumno">Nombre del alumno</label><br>
+        <select name="" id="selectInscribirAlumnos"></select><br>
+        <label for="seleccionarClase">Seleccionar Clase</label><br>
+        <select name="nombresClases" id="nombreClases">
+        </select><br>
+        <button onclick="buttonInicioInscribir()">Atras</button>
+        <button onclick="buttonGuardarInscribir()">Guardar</button>
+    </div>
+    <div id="asignarCalificacion" class="hidden">
+        <h2>Asignar Calificación</h2>
+        <label for="seleccionarClase">Seleccionar Clase</label><br>
+        <select name="nombresClases" id="nombreClasesAsignar">
+        </select><br>
+        <label for="alumnoInscritoClase">Nombre del alumno</label><br>
+        <select name="" id="selectCalificarAlumno"></select><br>
+        <label for="calificacion">Calificación</label><br>
+        <input id="calificacionAsignada" type="number"><br>
+        <button onclick="buttonAtrasAsignar()">Atras</button>
+        <button onclick="buttonGuardarAsignar()">Guardar</button>
+    </div>
+    <div id="grupos" class="hidden">
+        <h2>Grupos</h2>
+        <button onclick="buttonCrearGrupo()">Crear grupo</button><br>
+        <button onclick="buttonAsignarGrupo()">Asignar alumno a grupo</button><br>
+        <button onclick="buttonBuscarGrupo()">Buscar</button><br>
+        <button onclick="buttonInicioGrupo()">Inicio</button><br>
+
+    </div>
+    <div id="crearGrupo" class="hidden">
+        <h2>Crear grupo</h2>
+        <label for="nombreGrupo">Nombre del grupo</label><br>
+        <input id="inputNameGrupo" type="text"><br>
+        <button onclick="buttonAtrasCrearGrupo()">Atras</button>
+        <button onclick="buttonGuardarCrearGrupo()">Crear</button>
+    </div>
+    <div id="asignarGrupo" class="hidden">
+        <h2>Asignar grupo</h2>
+        <label for="">Grupo</label><br>
+        <select name="" id="selectGrupoAsignarGrupo"></select><br>
+        <label for="">Alumno</label><br>
+        <select name="" id="selectAlumnoAsignarGrupo"></select><br>
+        <button onclick="buttonAtrasAsignarGrupo()">Atras</button>
+        <button onclick="buttonGuardarAsignarGrupo()">Guardar</button>
+    </div>
+    <div id="buscar" class="hidden">
+        <h2>Buscar:</h2>
+        <button onclick="buttonBuscarNombre()">Nombre</button><br>
+        <button onclick="buttonBuscarApellidos()">Apellidos</button><br>
+        <button onclick="buttonBuscarListaOrdenada()">Lista ordenada por calificación</button><br>
+        <button onclick="buttonBuscarPromedioGrupo()">Promedio de grupo</button><br>
+        <button onclick="buttonBuscarPromedioAlumno()">Promedio de alumno</button><br>
+        <button onclick="buttonSalirBuscar()">Salir</button>
+    </div>
+    <div id="buscarNombre" class="hidden">
+        <h2>Buscar por nombre:</h2>
+        <label for="nombre">Nombre:</label><br>
+        <input id="inputNombreBuscar" type="text"><br>
+        <button onclick="buttonBuscarPorNombre()">Buscar</button>
+        <button onclick="buttonInicioBuscarPorNombre()">Inicio</button>
+    </div>
+    <div id="buscarApellido" class="hidden">
+        <h2>Buscar por Apellido:</h2>
+        <label for="apellido">Apellido:</label><br>
+        <input id="inputApellidoBuscar" type="text"><br>
+        <button onclick="buttonBuscarPorApellido()">Buscar</button>
+        <button onclick="buttonInicioBuscarporApellido()">Inicio</button>
+    </div>
+    <div id="buscarListaOrdenada" class="hidden">
+        <h2>Lista ordenada por calificación</h2>
+        <select name="" id="selectListaOrdenada">
+            <option value="ascendente">Ascendente</option>
+            <option value="descendente">Descendente</option>
+        </select><br>
+        <label id="mostrarLista" for="lista"></label>
+        <button onclick="buttonBuscarListaOrdenada()">Buscar</button>
+        <button onclick="buttonInicioListaOrdenada()">Inicio</button>
+    </div>
+    <div id="buscarPromedioGrupo" class="hidden">
+        <h2>Promedio de grupo</h2>
+        <label for="buscarGrupo">Seleccionar grupo:</label>
+        <select name="grupo" id="grupoBuscarPromedio"></select><br>
+        <label id="mostrarPromedioGrupo" for="promedioGrupo"></label>
+        <button onclick="buttonCalcularPromedioGrupo()">Calcular</button>
+        <button onclick="buttonInicioPromedioGrupo()">Inicio</button>
+    </div>
+    <div id="buscarPromedioAlumno" class="hidden">
+        <h2>Promedio de alumno</h2>
+        <label for="buscarAlumno">Seleccionar alumno:</label>
+        <select name="alumno" id="alumnoBuscarPromedio"></select><br>
+        <label id="mostrarPromedioAlumno" for="promedioAlumno"></label>
+        <button onclick="buttonBuscarPromedioAlumno()">Buscar</button>
+        <button onclick="buttonInicioPromedioAlumno()">Inicio</button>
+    </div>
+
+    <script src="./src/clase.js"></script>
+    <script src="./src/alumnos.js"></script>
+    <script src="./src/grupos.js"></script>
+    <script src="./src/index.js"></script>
+</body>
+
+</html
